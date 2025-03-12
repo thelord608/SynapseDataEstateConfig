@@ -1,0 +1,651 @@
+[
+    {
+        "ConstructType": "Ability",
+        "ConstructName": "ravens_apm",
+        "KF4DCode": "ravens_apm",
+        "KF4DLongCode": "ability/ravens_apm",
+        "Constituents": [
+            {
+                "KF4DCode": "ravens_apm",
+                "KF4DLongCode": "ability/ravens_apm",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Balance",
+        "KF4DCode": "BALA",
+        "KF4DLongCode": "drivers/bala",
+        "Constituents": [
+            {
+                "KF4DCode": "BALA",
+                "KF4DLongCode": "drivers/bala",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Challenge",
+        "KF4DCode": "CHAL",
+        "KF4DLongCode": "drivers/chal",
+        "Constituents": [
+            {
+                "KF4DCode": "CHAL",
+                "KF4DLongCode": "drivers/chal",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Collaboration",
+        "KF4DCode": "COLL",
+        "KF4DLongCode": "drivers/coll",
+        "Constituents": [
+            {
+                "KF4DCode": "COLL",
+                "KF4DLongCode": "drivers/coll",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Independence",
+        "KF4DCode": "INDY",
+        "KF4DLongCode": "drivers/indy",
+        "Constituents": [
+            {
+                "KF4DCode": "INDY",
+                "KF4DLongCode": "drivers/indy",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Power",
+        "KF4DCode": "POWR",
+        "KF4DLongCode": "drivers/powr",
+        "Constituents": [
+            {
+                "KF4DCode": "POWR",
+                "KF4DLongCode": "drivers/powr",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Driver",
+        "ConstructName": "Structure",
+        "KF4DCode": "STRC",
+        "KF4DLongCode": "drivers/strc",
+        "Constituents": [
+            {
+                "KF4DCode": "STRC",
+                "KF4DLongCode": "drivers/strc",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Adaptability",
+        "KF4DCode": "AD",
+        "KF4DLongCode": "traits/ad",
+        "Constituents": [
+            {
+                "KF4DCode": "AD",
+                "KF4DLongCode": "traits/ad",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Affiliation",
+        "KF4DCode": "AF",
+        "KF4DLongCode": "traits/af",
+        "Constituents": [
+            {
+                "KF4DCode": "AF",
+                "KF4DLongCode": "traits/af",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Assertiveness",
+        "KF4DCode": "AS",
+        "KF4DLongCode": "traits/as",
+        "Constituents": [
+            {
+                "KF4DCode": "AS",
+                "KF4DLongCode": "traits/as",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Confidence",
+        "KF4DCode": "CF",
+        "KF4DLongCode": "traits/cf",
+        "Constituents": [
+            {
+                "KF4DCode": "CF",
+                "KF4DLongCode": "traits/cf",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Composure",
+        "KF4DCode": "CP",
+        "KF4DLongCode": "traits/cp",
+        "Constituents": [
+            {
+                "KF4DCode": "CP",
+                "KF4DLongCode": "traits/cp",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Credibility",
+        "KF4DCode": "CR",
+        "KF4DLongCode": "traits/cr",
+        "Constituents": [
+            {
+                "KF4DCode": "CR",
+                "KF4DLongCode": "traits/cr",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Curiosity",
+        "KF4DCode": "CU",
+        "KF4DLongCode": "traits/cu",
+        "Constituents": [
+            {
+                "KF4DCode": "CU",
+                "KF4DLongCode": "traits/cu",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Empathy",
+        "KF4DCode": "EM",
+        "KF4DLongCode": "traits/em",
+        "Constituents": [
+            {
+                "KF4DCode": "EM",
+                "KF4DLongCode": "traits/em",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Focus",
+        "KF4DCode": "FO",
+        "KF4DLongCode": "traits/fo",
+        "Constituents": [
+            {
+                "KF4DCode": "FO",
+                "KF4DLongCode": "traits/fo",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Humility",
+        "KF4DCode": "HU",
+        "KF4DLongCode": "traits/hu",
+        "Constituents": [
+            {
+                "KF4DCode": "HU",
+                "KF4DLongCode": "traits/hu",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Influence",
+        "KF4DCode": "IN",
+        "KF4DLongCode": "traits/in",
+        "Constituents": [
+            {
+                "KF4DCode": "IN",
+                "KF4DLongCode": "traits/in",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Need For Achievement",
+        "KF4DCode": "NA",
+        "KF4DLongCode": "traits/na",
+        "Constituents": [
+            {
+                "KF4DCode": "NA",
+                "KF4DLongCode": "traits/na",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Openness To Differences",
+        "KF4DCode": "OD",
+        "KF4DLongCode": "traits/od",
+        "Constituents": [
+            {
+                "KF4DCode": "OD",
+                "KF4DLongCode": "traits/od",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Optimism",
+        "KF4DCode": "OP",
+        "KF4DLongCode": "traits/op",
+        "Constituents": [
+            {
+                "KF4DCode": "OP",
+                "KF4DLongCode": "traits/op",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Persistence",
+        "KF4DCode": "PE",
+        "KF4DLongCode": "traits/pe",
+        "Constituents": [
+            {
+                "KF4DCode": "PE",
+                "KF4DLongCode": "traits/pe",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Risk-Taking",
+        "KF4DCode": "RI",
+        "KF4DLongCode": "traits/ri",
+        "Constituents": [
+            {
+                "KF4DCode": "RI",
+                "KF4DLongCode": "traits/ri",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "SA",
+        "KF4DCode": "SA",
+        "KF4DLongCode": "traits/sa",
+        "FormulaType": "Basic",
+        "Constituents": [
+            {
+                "KF4DCode": "SA",
+                "KF4DLongCode": "traits/sa",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Sociability",
+        "KF4DCode": "SO",
+        "KF4DLongCode": "traits/so",
+        "Constituents": [
+            {
+                "KF4DCode": "SO",
+                "KF4DLongCode": "traits/so",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Situational Self-Awareness",
+        "KF4DCode": "SS",
+        "KF4DLongCode": "traits/ss",
+        "Constituents": [
+            {
+                "KF4DCode": "SS",
+                "KF4DLongCode": "traits/ss",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Tolerance Of Ambiguity",
+        "KF4DCode": "TA",
+        "KF4DLongCode": "traits/ta",
+        "Constituents": [
+            {
+                "KF4DCode": "TA",
+                "KF4DLongCode": "traits/ta",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Trait",
+        "ConstructName": "Trust",
+        "KF4DCode": "TR",
+        "KF4DLongCode": "traits/tr",
+        "Constituents": [
+            {
+                "KF4DCode": "TR",
+                "KF4DLongCode": "traits/tr",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Avoidant",
+        "KF4DCode": "AVOID",
+        "KF4DLongCode": "riskfactors/avoid",
+        "Constituents": [
+            {
+                "KF4DCode": "AVOID",
+                "KF4DLongCode": "riskfactors/avoid",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Closed",
+        "KF4DCode": "CLOSE",
+        "KF4DLongCode": "riskfactors/close",
+        "Constituents": [
+            {
+                "KF4DCode": "CLOSE",
+                "KF4DLongCode": "riskfactors/close",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Defensive",
+        "KF4DCode": "DEFEN",
+        "KF4DLongCode": "riskfactors/defen",
+        "Constituents": [
+            {
+                "KF4DCode": "DEFEN",
+                "KF4DLongCode": "riskfactors/defen",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Egotistic",
+        "KF4DCode": "EGOTI",
+        "KF4DLongCode": "riskfactors/egoti",
+        "Constituents": [
+            {
+                "KF4DCode": "EGOTI",
+                "KF4DLongCode": "riskfactors/egoti",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Micro-Managing",
+        "KF4DCode": "MICRO",
+        "KF4DLongCode": "riskfactors/micro",
+        "Constituents": [
+            {
+                "KF4DCode": "MICRO",
+                "KF4DLongCode": "riskfactors/micro",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Opportunistic",
+        "KF4DCode": "OPPOR",
+        "KF4DLongCode": "riskfactors/oppor",
+        "Constituents": [
+            {
+                "KF4DCode": "OPPOR",
+                "KF4DLongCode": "riskfactors/oppor",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Restrained",
+        "KF4DCode": "RESTR",
+        "KF4DLongCode": "riskfactors/restr",
+        "Constituents": [
+            {
+                "KF4DCode": "RESTR",
+                "KF4DLongCode": "riskfactors/restr",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Social Pleaser",
+        "KF4DCode": "SOCIA",
+        "KF4DLongCode": "riskfactors/socia",
+        "Constituents": [
+            {
+                "KF4DCode": "SOCIA",
+                "KF4DLongCode": "riskfactors/socia",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Solitary",
+        "KF4DCode": "SOLIT",
+        "KF4DLongCode": "riskfactors/solit",
+        "Constituents": [
+            {
+                "KF4DCode": "SOLIT",
+                "KF4DLongCode": "riskfactors/solit",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Suspicious",
+        "KF4DCode": "SUSPI",
+        "KF4DLongCode": "riskfactors/suspi",
+        "Constituents": [
+            {
+                "KF4DCode": "SUSPI",
+                "KF4DLongCode": "riskfactors/suspi",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Risk Factors",
+        "ConstructName": "Volatile",
+        "KF4DCode": "VOLAT",
+        "KF4DLongCode": "riskfactors/volat",
+        "Constituents": [
+            {
+                "KF4DCode": "VOLAT",
+                "KF4DLongCode": "riskfactors/volat",
+                "Weight": 1,
+                "BaseField": "1to10"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "Situational Self-Awareness",
+        "KF4DCode": "Situational Self-Awareness",
+        "KF4DLongCode": "learningagility/situational self-awareness",
+        "Constituents": [
+            {
+                "KF4DCode": "ss",
+                "KF4DLongCode": "traits/ss",
+                "Weight": 1,
+                "BaseField": "normedScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "Overall Agility",
+        "KF4DCode": "Overall Agility",
+        "KF4DLongCode": "learningagility/overall agility",
+        "Constituents": [
+            {
+                "KF4DCode": "Change Agility",
+                "KF4DLongCode": "learningagility/change agility",
+                "Weight": 0.25,
+                "BaseField": "rawScore"
+            },
+            {
+                "KF4DCode": "Mental Agility",
+                "KF4DLongCode": "learningagility/mental agility",
+                "weight": 0.25,
+                "BaseField": "rawScore"
+            },
+            {
+                "KF4DCode": "People Agility",
+                "KF4DLongCode": "learningagility/people agility",
+                "weight": 0.25,
+                "BaseField": "rawScore"
+            },
+            {
+                "KF4DCode": "Results Agility",
+                "KF4DLongCode": "learningagility/results agility",
+                "weight": 0.25,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "Mental Agility",
+        "KF4DCode": "Mental Agility",
+        "KF4DLongCode": "learningagility/mental agility",
+        "Constituents": [
+            {
+                "KF4DCode": "Mental Agility",
+                "KF4DLongCode": "learningagility/mental agility",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "Change Agility",
+        "KF4DCode": "Change Agility",
+        "KF4DLongCode": "learningagility/change agility",
+        "Constituents": [
+            {
+                "KF4DCode": "Change Agility",
+                "KF4DLongCode": "learningagility/change agility",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "People Agility",
+        "KF4DCode": "People Agility",
+        "KF4DLongCode": "learningagility/people agility",
+        "Constituents": [
+            {
+                "KF4DCode": "People Agility",
+                "KF4DLongCode": "learningagility/people agility",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    },
+    {
+        "ConstructType": "Learning Agility",
+        "ConstructName": "Results Agility",
+        "KF4DCode": "Results Agility",
+        "KF4DLongCode": "learningagility/results agility",
+        "Constituents": [
+            {
+                "KF4DCode": "Results Agility",
+                "KF4DLongCode": "learningagility/results agility",
+                "Weight": 1,
+                "BaseField": "rawScore"
+            }
+        ]
+    }
+]

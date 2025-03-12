@@ -1,0 +1,228 @@
+[
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Assessments_US",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Assessments",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "use.kfas-blended-assessment-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.amazonaws.com",
+            "subFolder": "assessment",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-assessments/use.kfas-blended-assessment-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-assessments/use.kfas-blended-assessment-synapse-prod/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-assessments/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Assessments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-scores/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Scores"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-assessments/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "ProjectName"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-scores/use.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_AssessmentSummary"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-assessments/use.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_CandidateAssessments"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-scores/use.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Assessments_EU",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Assessment",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "euc.kfas-blended-assessment-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.eu-central-1.amazonaws.com",
+            "subFolder": "assessment",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-assessments/euc.kfas-blended-assessment-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-assessments/euc.kfas-blended-assessment-synapse-prod/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-assessments/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Assessments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-scores/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Scores"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-assessments/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "ProjectName"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-scores/euc.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_AssessmentSummary"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-assessments/euc.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_CandidateAssessments"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-scores/euc.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Demographics_US",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Demographics",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "use.kfas-blended-assessment-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.amazonaws.com",
+            "subFolder": "pii",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+            "silverContainer": "silver",
+            "silverDirectory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Demographics"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-pii/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_PII"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "value"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-demographics/use.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_Demographics"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-pii/use.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_PII"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Demographics_EU",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Demographics",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "euc.kfas-blended-assessment-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.eu-central-1.amazonaws.com",
+            "subFolder": "pii",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+            "silverContainer": "silver",
+            "silverDirectory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_Demographics"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-pii/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Silver_KFAS_PII"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "value"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-demographics/euc.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_Demographics"
+                },
+                {
+                    "Container": "silver",
+                    "Directory": "kfas/kfas-pii/euc.kfas-blended-assessment-synapse-prod/",
+                    "sprocName": "util.spIngest_KFAS_PII"
+                }
+            ],
+            "delta": true
+        }
+    }
+]

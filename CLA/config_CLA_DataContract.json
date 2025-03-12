@@ -1,0 +1,1515 @@
+[
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_LookupValues",
+            "dateModified": "2025-02-11 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "LookUpEntityValues",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/lookup_values/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/lookup_values/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/lookup_values/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/lookup_values/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_LookupValues"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_AIS_Sections",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_AIS_Sections",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_ais_sections/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_ais_sections/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_ais_sections/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_ais_sections/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_AIS_Sections"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_AIS_Sections_List",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_AIS_Sections_List",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_ais_sections_list/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_ais_sections_list/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_ais_sections_list/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_ais_sections_list/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_AIS_Sections_List"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_ImpactRating",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_EG_ImpactRating",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_impactrating/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_impactrating/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_impactrating/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_impactrating/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Impact_Rating"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_Bars",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_EG_Bars",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_bars/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_bars/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_bars/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_bars/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Bars"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_Summary",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_EG_Summary",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_summary/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_summary/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_summary/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_summary/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Summary"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Methods",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_Methods",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_methods/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_methods/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_methods/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_methods/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Methods"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Method_Attributes",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_Method_Attributes",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_method_attributes/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_method_attributes/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_method_attributes/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_method_attributes/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Method_Attributes"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Task_List",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "vwCLA_Synapse_Model_Task_List",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_task_list/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_task_list/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_task_list/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_task_list/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Task_List"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user/us-east-1/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "Engagement Name,Project Name,Client Name,Email,Delivery Office,FirstName,LastName,LinkedInProfile"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_AIS",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_AIS",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ais/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ais/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/us-east-1/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "Project Name"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/us-east-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Value,OriginalValue"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/us-east-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Value,OriginalValue"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ais/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_AIS"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Comments",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Comments",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_comments/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_comments/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/us-east-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Comments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/us-east-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Comments"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_comments/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Comments"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Ratings",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Ratings",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_ratings/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_ratings/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_ratings/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_ratings/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Ratings"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Scores",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Scores",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_scores/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_scores/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_scores/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_scores/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Summary",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Summary",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_summary/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_summary/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/us-east-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/us-east-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_summary/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Summary"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IG",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_IG",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ig/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ig/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/us-east-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/us-east-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ig/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_IG"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IR_Comments",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_IR_Comments",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ir_comments/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ir_comments/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/us-east-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Comments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/us-east-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Comments"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ir_comments/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_IR_Comments"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IR_Raw_Scores",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_IR_Raw_Scores",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ir_raw_scores/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ir_raw_scores/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_raw_scores/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ir_raw_scores/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_IR_Raw_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_Workflow",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "US"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfadvance-dbcluster.cluster-ro-cu9i6frhknuj.us-east-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE",
+            "endpoint": "CLA_Extract_Synapse_User_Workflow",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_workflow/us-east-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_workflow/us-east-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_workflow/us-east-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_workflow/us-east-1/",
+                    "sprocName": "util.spIngest_CLA_User_Workflow"
+                }
+            ],
+            "delta": true
+        }
+    },
+    
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_LookupValues",
+            "dateModified": "2025-02-11 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "LookUpEntityValues",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/lookup_values/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/lookup_values/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/lookup_values/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/lookup_values/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_LookupValues"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_AIS_Sections",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_AIS_Sections",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_ais_sections/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_ais_sections/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_ais_sections/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_ais_sections/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_AIS_Sections"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_AIS_Sections_List",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_AIS_Sections_List",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_ais_sections_list/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_ais_sections_list/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_ais_sections_list/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_ais_sections_list/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_AIS_Sections_List"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_ImpactRating",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_EG_ImpactRating",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_impactrating/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_impactrating/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_impactrating/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_impactrating/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Impact_Rating"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_Bars",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_EG_Bars",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_bars/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_bars/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_bars/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_bars/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Bars"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_EG_Summary",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_EG_Summary",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_eg_summary/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_eg_summary/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_eg_summary/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_eg_summary/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_EG_Summary"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Methods",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_Methods",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_methods/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_methods/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_methods/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_methods/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Methods"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Method_Attributes",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_Method_Attributes",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_method_attributes/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_method_attributes/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_method_attributes/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_method_attributes/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Method_Attributes"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_Model_Task_List",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-view",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "vwCLA_Synapse_Model_Task_List",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/model_task_list/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/model_task_list/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/model_task_list/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/model_task_list/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_Model_Task_List"
+                }
+            ],
+            "delta": true
+        }
+    }, 
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user/eu-central1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user/eu-central-1/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "Engagement Name,Project Name,Client Name,Email,Delivery Office,FirstName,LastName,LinkedInProfile"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User"
+                }
+            ],
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_AIS",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_AIS",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ais/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ais/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/eu-central-1/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "Project Name"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/eu-central-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Value,OriginalValue"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ais/eu-central-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Value,OriginalValue"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ais/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_AIS"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Comments",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Comments",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_comments/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_comments/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/eu-central-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Comments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_comments/eu-central-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Comments"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_comments/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Comments"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Ratings",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Ratings",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_ratings/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_ratings/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_ratings/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_ratings/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Ratings"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Scores",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Scores",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_scores/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_scores/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_scores/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_scores/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_EG_Summary",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_EG_Summary",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_eg_summary/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_eg_summary/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/eu-central-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_eg_summary/eu-central-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_eg_summary/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_EG_Summary"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IG",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_IG",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ig/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ig/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/eu-central-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ig/eu-central-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Assessor Notes, Participant Facing Text, Client Facing Text"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ig/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_IG"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IR_Comments",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_IR_Comments",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ir_comments/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ir_comments/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/eu-central-1/",
+                    "silverNotebook": "Cleanse_DepersonaliseStrings",
+                    "parameters": "Comments"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_comments/eu-central-1/",
+                    "silverNotebook": "Cleanse_RemoveMedicalInfo",
+                    "parameters": "Comments"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ir_comments/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_IR_Comments"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_IR_Raw_Scores",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_IR_Raw_Scores",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_ir_raw_scores/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_ir_raw_scores/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_ir_raw_scores/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_ir_raw_scores/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_IR_Raw_Scores"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CLA_User_Workflow",
+            "dateModified": "2024-10-22 12:00:00.000000",
+            "dataSourceName": "CLA",
+            "sourceSystemName": "CLA",
+            "dataFeedContractType": "SQL-sproc",
+            "dataSourceRegion": "EU"
+        },
+        "DataFeedContractMetadata": {
+            "access_Username": "kfi_synapse_user",
+            "access_PasswordSecretName": "CLA-AWS-MYSQL-PWD",
+            "databaseServer": "prod-kfa-eu-dbcluster.cluster-ro-cuknptmfhqco.eu-central-1.rds.amazonaws.com",
+            "databaseName": "PROD_KFADVANCE_EU",
+            "endpoint": "CLA_Extract_Synapse_User_Workflow",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "cla/user_workflow/eu-central-1/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "cla/user_workflow/eu-central-1/",
+            "silverJobs": [
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "cla/user_workflow/eu-central-1/",
+                    "silverNotebook": "Generic_BronzeToSilver"
+                }
+            ],
+            "sqlDedicatedPoolJobs": [
+                {
+                    "Container": "silver",
+                    "Directory": "cla/user_workflow/eu-central-1/",
+                    "sprocName": "util.spIngest_CLA_User_Workflow"
+                }
+            ],
+            "delta": true
+        }
+    }
+]

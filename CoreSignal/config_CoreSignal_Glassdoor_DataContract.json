@@ -1,0 +1,48 @@
+[
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CoreSignal_Glassdoor_Companies",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "Glassdoor",
+            "sourceSystemName": "CoreSignal",
+            "dataFeedContractType": "HTTPS",
+            "schemaName": "dbo"
+        },
+        "DataFeedContractMetadata": {
+            "coresignal_username": "kornferry",
+            "coresignal_password_secret": "Coresignal-PWD",
+            "serviceURL": "https://storage.coresignal.com/",
+            "relativeURL": "kornferry/glassdoor/company/",
+            "fileExtension": ".tar.gz",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "CoreSignal/glassdoor/company/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "CoreSignal/glassdoor/company/",
+            "sourceFileSuffix": "_companies.tar.gz",
+            "delta": false
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "CoreSignal_Glassdoor_Reviews",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "Glassdoor",
+            "sourceSystemName": "CoreSignal",
+            "dataFeedContractType": "HTTPS",
+            "schemaName": "dbo"
+        },
+        "DataFeedContractMetadata": {
+            "coresignal_username": "kornferry",
+            "coresignal_password_secret": "Coresignal-PWD",
+            "serviceURL": "https://storage.coresignal.com/",
+            "relativeURL": "kornferry/glassdoor/reviews/",
+            "fileExtension": ".tar.gz",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "CoreSignal/glassdoor/reviews/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "CoreSignal/glassdoor/reviews/",
+            "sourceFileSuffix": "_reviews.tar.gz",
+            "delta": false
+        }
+    }
+]

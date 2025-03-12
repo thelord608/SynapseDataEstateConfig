@@ -1,0 +1,124 @@
+[
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Projects_US",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Projects",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "US",
+            "schemaName": "prj"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "use.kfas-blended-project-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.amazonaws.com",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/",
+            "silverJobs": [
+                {
+                    "name": "Projects",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects/",
+                    "silverNotebook": "Projects_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Company_Culture",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects_Company_Culture/",
+                    "silverNotebook": "Project_Company_Culture_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Instruments",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects_Instruments/",
+                    "silverNotebook": "Project_Instruments_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Job_Characteristics",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects_Job_Characteristics/",
+                    "silverNotebook": "Project_Job_Characteristics_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_SP_Assessment_Targets",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects_SP_Assessment_Targets/",
+                    "silverNotebook": "Projects_SP_Assessment_Targets_Bronze_to_Silver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/use.kfas-blended-project-synapse-prod/Projects/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "ProjectName"
+                }
+            ],
+            "delta": true
+        }
+    },
+    {
+        "DataFeedContract": {
+            "dataFeedContractName": "KFAS_Projects_EU",
+            "dateModified": "2024-08-12 16:29:59.716171",
+            "dataSourceName": "KFAS_Projects",
+            "sourceSystemName": "KFAS",
+            "dataFeedContractType": "AmazonS3",
+            "dataSourceRegion": "EU",
+            "schemaName": "prj"
+        },
+        "DataFeedContractMetadata": {
+            "bucketName": "euc.kfas-blended-project-synapse-prod",
+            "accessKeyID_secretName": "KFAS-S3-Bucket-Projects-AccessKeyID",
+            "secretAccessKey_secretName": "KFAS-S3-Bucket-Projects-SecretAccessKey",
+            "serviceURL": "https://s3.eu-central-1.amazonaws.com",
+            "fileExtension": ".json",
+            "inboundContainer": "inbound",
+            "inboundDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/",
+            "bronzeContainer": "bronze",
+            "bronzeDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/",
+            "silverJobs": [
+                {
+                    "name": "Projects",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects/",
+                    "silverNotebook": "Projects_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Company_Culture",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects_Company_Culture/",
+                    "silverNotebook": "Project_Company_Culture_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Instruments",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects_Instruments/",
+                    "silverNotebook": "Project_Instruments_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_Job_Characteristics",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects_Job_Characteristics/",
+                    "silverNotebook": "Project_Job_Characteristics_Bronze_to_Silver"
+                },
+                {
+                    "name": "Projects_SP_Assessment_Targets",
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects_SP_Assessment_Targets/",
+                    "silverNotebook": "Projects_SP_Assessment_Targets_Bronze_to_Silver"
+                },
+                {
+                    "silverContainer": "silver",
+                    "silverDirectory": "kfas/kfas-projects/euc.kfas-blended-project-synapse-prod/Projects/",
+                    "silverNotebook": "Cleanse_TrimStrings",
+                    "parameters": "ProjectName"
+                }
+            ],
+            "delta": true
+        }
+    }
+]
