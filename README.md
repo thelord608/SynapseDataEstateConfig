@@ -251,6 +251,8 @@ az role assignment create --assignee <vm-managed-identity-id> \
 - ✅ Now, the VM can authenticate to Azure Storage using its Managed Identity!
 
 ======================================================================================================================================
+
+
 Build Pipeline (azure-pipelines-build.yml)
 ```yaml
 trigger:
