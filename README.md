@@ -175,7 +175,167 @@ stages:
 - The **Dev stage** runs automatically.
 - The **Prod stage** can be triggered manually or automatically based on conditions.
 
----
+---------------------------------------------------
+### **Install Azure CLI and Az PowerShell Modules on Self-Hosted Windows VM**
+- Before running the pipeline, install the necessary tools on the self-hosted Windows VM.
 
+- Install Azure CLI on Windows VM
+  Run the following PowerShell command as Administrator:
+```powershell
+# Download and install Azure CLI
+Invoke-WebRequest -Uri "https://aka.ms/installazurecliwindows" -OutFile "AzureCLI.msi"
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i AzureCLI.msi /quiet /norestart" -Wait
+
+# Verify installation
+az --version
+```
+- Install Az PowerShell Modules
+  Run the following PowerShell command to install the required Az modules:
+```powershell
+  # Set execution policy
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+# Install Az PowerShell module
+Install-Module -Name Az -AllowClobber -Scope AllUsers -Force
+
+# Verify installation
+Get-Module -ListAvailable Az*
+```
+- We allow locally created scripts to run while still blocking scripts from the internet unless signed via execution policy.
+
+### **Validate ADLS Permissions**
+- Check ACL Permissions Using Azure CLI
+Run the following command on the VM to verify permissions:
+```
+az storage fs access show --account-name yourstorageaccount --file-system yourcontainer --path CLA/
+
+```
+- If you need to grant write permissions to the Managed Identity of the VM:
+```
+az storage fs access set --account-name yourstorageaccount \
+  --file-system yourcontainer \
+  --path CLA/ \
+  --permissions rwx \
+  --group
+
+```
+### ** Assign "Storage Blob Data Contributor" to the VM’s Managed Identity**
+
+- The "Storage Blob Data Contributor" role in Azure Role-Based Access Control (RBAC) grants read, write, and delete permissions on Azure Blob Storage to the Managed Identity of your self-hosted agent VM.
+
+- ✅ Why Is It Required?
+- Since the Azure DevOps pipeline is using Managed Identity (az login --identity), the VM’s Managed Identity needs explicit permission to:
+
+- Read existing blobs in the storage account.
+- Upload and overwrite blobs (write access).
+- Delete blobs if needed.
+- Without this role, file uploads will fail with an error like:
+```
+AuthorizationPermissionMismatch: This request is not authorized to perform this operation
+```
+- How to Assign "Storage Blob Data Contributor" to the VM’s Managed Identity
+Run the following Azure CLI command:
+```
+az role assignment create --assignee <vm-managed-identity-id> \
+  --role "Storage Blob Data Contributor" \
+  --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>"
+
+```
+
+** Alternative: Assign Role via Azure Portal **
+- Go to Azure Portal → Storage Account → IAM (Access Control)
+- Click "Add Role Assignment"
+- Role: Storage Blob Data Contributor
+- Assign to: Your VM’s Managed Identity
+- Save the role assignment.
+- ✅ Now, the VM can authenticate to Azure Storage using its Managed Identity!
+
+======================================================================================================================================
+Build Pipeline (azure-pipelines-build.yml)
+```yaml
+trigger:
+  branches:
+    include:
+      - main  # Trigger on changes to the main branch
+
+pool:
+  name: Default  # Use self-hosted agent
+
+stages:
+- stage: Build
+  displayName: "Prepare Files"
+  jobs:
+  - job: PrepareArtifacts
+    displayName: "Package JSON Files"
+    steps:
+    - task: CopyFiles@2
+      displayName: "Copy JSON Files to Staging"
+      inputs:
+        SourceFolder: "$(Build.SourcesDirectory)"
+        Contents: "**/*.json"  # Copy all JSON files
+        TargetFolder: "$(Build.ArtifactStagingDirectory)"
+
+    - task: PublishBuildArtifacts@1
+      displayName: "Publish JSON Files"
+      inputs:
+        pathToPublish: "$(Build.ArtifactStagingDirectory)"
+        artifactName: "json-files"
+
+
+```
+
+**Deployment Pipeline (azure-pipelines-deploy.yml)**
+```yaml
+trigger: none  # No trigger, manually runs after build pipeline
+
+pool:
+  name: Default  # Use self-hosted agent
+
+variables:
+  storageAccount: "yourstorageaccount"
+  containerName: "yourcontainer"
+
+stages:
+- stage: Deploy
+  displayName: "Upload JSON Files to ADLS"
+  jobs:
+  - job: UploadToADLS
+    displayName: "Upload JSON Files"
+    steps:
+    - download: current
+      artifact: json-files
+
+    - task: AzureCLI@2
+      displayName: "Authenticate and Upload to ADLS"
+      inputs:
+        azureSubscription: "Your-Azure-Service-Connection"
+        scriptType: "bash"
+        scriptLocation: "inlineScript"
+        inlineScript: |
+          # Login using Managed Identity
+          az login --identity
+
+          # Upload JSON files to CLA
+          az storage blob upload-batch \
+            --account-name $(storageAccount) \
+            --destination $(containerName)/CLA/ \
+            --source "$(Pipeline.Workspace)/json-files/CLA" \
+            --auth-mode "login"
+
+          # Upload JSON files to CoreSignal
+          az storage blob upload-batch \
+            --account-name $(storageAccount) \
+            --destination $(containerName)/CoreSignal/ \
+            --source "$(Pipeline.Workspace)/json-files/CoreSignal" \
+            --auth-mode "login"
+
+          # Upload JSON files to KFAS
+          az storage blob upload-batch \
+            --account-name $(storageAccount) \
+            --destination $(containerName)/KFAS/ \
+            --source "$(Pipeline.Workspace)/json-files/KFAS" \
+            --auth-mode "login"
+
+```
 🚀 **This updated guide ensures all permissions, dependencies, and storage paths are correctly set up for successful deployment!** 🚀
 
