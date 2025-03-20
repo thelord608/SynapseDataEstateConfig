@@ -168,7 +168,88 @@ stages:
         BlobPrefix: 'KFAS/'  # Ensuring KFAS files go under KFAS folder
         Overwrite: true
 ```
+### OR
+```yaml
+trigger:
+  branches:
+    include:
+      - main  # Runs when changes are pushed to the main branch
 
+pool:
+  name: Default  # Use self-hosted agent
+
+stages:
+- stage: CheckDependencies
+  displayName: "Check Required Dependencies on Self-Hosted VM"
+  jobs:
+  - job: VerifyDependencies
+    displayName: "Ensure Azure CLI and Az Modules are Installed"
+    steps:
+    - task: PowerShell@2
+      displayName: "Check Azure CLI Installation"
+      inputs:
+        targetType: "inline"
+        script: |
+          if (-not (Get-Command az -ErrorAction SilentlyContinue)) {
+            Write-Host "##vso[task.logissue type=error]Azure CLI is not installed. Install it from https://aka.ms/installazurecliwindows"
+            exit 1
+          } else {
+            Write-Host "Azure CLI is installed: $(az --version)"
+          }
+
+    - task: PowerShell@2
+      displayName: "Check Az PowerShell Modules"
+      inputs:
+        targetType: "inline"
+        script: |
+          if (-not (Get-Module -ListAvailable Az)) {
+            Write-Host "##vso[task.logissue type=error]Az PowerShell Module is not installed. Install it using 'Install-Module -Name Az -AllowClobber -Scope AllUsers -Force'"
+            exit 1
+          } else {
+            Write-Host "Az PowerShell Module is installed."
+          }
+- stage: Build
+  displayName: "Build Stage"
+  jobs:
+  - job: PackageFiles
+    displayName: "Prepare Files for Deployment"
+    steps:
+    - task: CopyFiles@2
+      displayName: "Copy JSON Files to Staging"
+      inputs:
+        SourceFolder: "$(Build.SourcesDirectory)"
+        Contents: "**/*.json"  # Copy all JSON files while preserving folders
+        TargetFolder: "$(Build.ArtifactStagingDirectory)"
+
+    - task: PublishBuildArtifacts@1
+      displayName: "Publish JSON Files as Artifacts"
+      inputs:
+        pathToPublish: "$(Build.ArtifactStagingDirectory)"
+        artifactName: "json-files"
+
+- stage: Deploy
+  displayName: "Deploy JSON Files to ADLS"
+  dependsOn: Build  # Ensures deployment runs only after build completes successfully
+  condition: succeeded()  # Ensures deployment only runs if build is successful
+  jobs:
+  - job: UploadToADLS
+    displayName: "Upload JSON Files using AzureBlob File Copy"
+    steps:
+    - download: current
+      artifact: json-files
+
+    - task: AzureFileCopy@4
+      displayName: "Copy Files to Azure Blob Storage"
+      inputs:
+        SourcePath: "$(Pipeline.Workspace)/json-files"
+        azureSubscription: "Your-Azure-Service-Connection"
+        Destination: "AzureBlob"
+        storage: "yourstorageaccount"
+        ContainerName: "yourcontainer"
+        BlobPrefix: "uploaded-files/"
+        Overwrite: true
+
+```
 ### **2. Save and Deploy**
 
 - This will fetch the artifact and copy the files to ADLS.
@@ -264,6 +345,35 @@ pool:
   name: Default  # Use self-hosted agent
 
 stages:
+- stage: CheckDependencies
+  displayName: "Check Required Dependencies on Self-Hosted VM"
+  jobs:
+  - job: VerifyDependencies
+    displayName: "Ensure Azure CLI and Az Modules are Installed"
+    steps:
+    - task: PowerShell@2
+      displayName: "Check Azure CLI Installation"
+      inputs:
+        targetType: "inline"
+        script: |
+          if (-not (Get-Command az -ErrorAction SilentlyContinue)) {
+            Write-Host "##vso[task.logissue type=error]Azure CLI is not installed. Install it from https://aka.ms/installazurecliwindows"
+            exit 1
+          } else {
+            Write-Host "Azure CLI is installed: $(az --version)"
+          }
+
+    - task: PowerShell@2
+      displayName: "Check Az PowerShell Modules"
+      inputs:
+        targetType: "inline"
+        script: |
+          if (-not (Get-Module -ListAvailable Az)) {
+            Write-Host "##vso[task.logissue type=error]Az PowerShell Module is not installed. Install it using 'Install-Module -Name Az -AllowClobber -Scope AllUsers -Force'"
+            exit 1
+          } else {
+            Write-Host "Az PowerShell Module is installed."
+          }
 - stage: Build
   displayName: "Prepare Files"
   jobs:
