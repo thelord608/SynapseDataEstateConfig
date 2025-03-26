@@ -482,5 +482,48 @@ stages:
             --auth-mode "login"
 
 ```
+
+=========================================================
+**USING cmdline@2**
+```yaml
+resources:
+  pipelines:
+    - pipeline: buildOutput
+      source: DataConfig-CI  # Name of the build pipeline that publishes json-files artifact
+      trigger: none
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals USE-SYNAPSEDT01
+
+variables:
+  storageAccount: "usekfdtsynadls01"
+  containerName: "config"
+
+stages:
+- stage: Deploy
+  displayName: "Upload JSON Files to ADLS"
+  jobs:
+  - job: UploadToADLS
+    displayName: "Upload JSON Files"
+    steps:
+    - download: buildOutput
+      artifact: json-files
+
+    - task: CmdLine@2
+      displayName: "Upload JSON Files to ADLS using Managed Identity"
+      inputs:
+        script: |
+          az login --identity
+          az storage blob upload-batch ^
+            --account-name $(storageAccount) ^
+            --destination $(containerName)/CapIQ/ ^
+            --source "$(Pipeline.Workspace)\json-files\CapIQ" ^
+            --auth-mode login
+      env:
+        AZURE_CONFIG_DIR: $(Agent.TempDirectory)\.azclitask
+
+```
 🚀 **This updated guide ensures all permissions, dependencies, and storage paths are correctly set up for successful deployment!** 🚀
 
