@@ -395,6 +395,39 @@ stages:
 
 
 ```
+or
+```
+trigger:
+  branches:
+    include:
+      - feature/pj/172-deployment_config_data_to_ADLS  # Trigger on changes to this specific feature branch
+
+pool:
+  name: Default  # Use self-hosted agent pool
+  demands:
+    - Agent.Name -equals USE-SYNAPSEDT01  # Ensure only USE-SYNAPSEDT01 agent runs this pipeline
+
+stages:
+- stage: Build
+  displayName: "Prepare Files"
+  jobs:
+  - job: PrepareArtifacts
+    displayName: "Package JSON Files"
+    steps:
+    - task: CopyFiles@2
+      displayName: "Copy JSON Files to Staging"
+      inputs:
+        SourceFolder: "$(Build.SourcesDirectory)"  # Path where the repo is cloned during pipeline run
+        Contents: "**/*.json"  # Copy all JSON files
+        TargetFolder: "$(Build.ArtifactStagingDirectory)"  # Temporary folder used to store files before publishing
+
+    - task: PublishBuildArtifacts@1
+      displayName: "Publish JSON Files"
+      inputs:
+        pathToPublish: "$(Build.ArtifactStagingDirectory)"
+        artifactName: "json-files"
+
+```
 
 **Deployment Pipeline (azure-pipelines-deploy.yml)**
 ```yaml
