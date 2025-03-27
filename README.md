@@ -530,8 +530,7 @@ stages:
        Allow outbound to 169.254.169.254:80
 If outbound access to 169.254.169.254 is blocked, then your VM cannot use Managed Identity, which is why az login --identity is failing.
 ✅ Steps to Fix
-
-- 🔧 Option 1: Update NSG (Network Security Group)
+🔧 Option 1: Update NSG (Network Security Group)
 Go to your VM in Azure Portal
 Under Networking, locate the NIC Network Security Group
 In Inbound and Outbound Rules, make sure:
