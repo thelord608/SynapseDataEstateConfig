@@ -523,7 +523,56 @@ stages:
             --auth-mode login
       env:
         AZURE_CONFIG_DIR: $(Agent.TempDirectory)\.azclitask
-
 ```
-🚀 **This updated guide ensures all permissions, dependencies, and storage paths are correctly set up for successful deployment!** 🚀
+**Recomended Fixes**
+
+1. Check VM NSG or Firewall Rules
+       Allow outbound to 169.254.169.254:80
+If outbound access to 169.254.169.254 is blocked, then your VM cannot use Managed Identity, which is why az login --identity is failing.
+✅ Steps to Fix
+
+- 🔧 Option 1: Update NSG (Network Security Group)
+Go to your VM in Azure Portal
+Under Networking, locate the NIC Network Security Group
+In Inbound and Outbound Rules, make sure:
+- ✅ No Deny rule is blocking 169.254.169.254
+- ✅ Add Allow outbound rule:
+Destination: 169.254.169.254
+Port: 80
+Protocol: TCP
+Action: Allow
+
+🔧 Option 2: If Using Azure Firewall or Routing
+- Make sure 169.254.169.254 is not being routed externally.
+- This IP should always route locally inside the VM.
+- No UDR (User Defined Route) should override default for 0.0.0.0/0.
+
+
+3. Make sure the VM's system-assigned identity is enabled
+      You've confirmed this already ✅
+
+
+5. Test if Managed Identity works manually on the VM using PowerShell or CMD
+   - Use PowerShell (Preferred)
+- Run this in PowerShell as Administrator:
+```powershell
+Invoke-RestMethod -Headers @{Metadata="true"} `
+  -Method GET `
+  -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2021-02-01&resource=https://storage.azure.com"
+```
+If successful, it returns a JSON with an access_token:
+```
+{
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOi...",
+  "expires_on": "1698353432",
+  "resource": "https://storage.azure.com",
+  ...
+}
+```
+ ✅ This proves that:
+- Managed Identity is working
+- VM can talk to Azure’s metadata service
+
+  ✅ If identity login keeps failing, consider switching to Azure DevOps Service Connection (azureSubscription:) for now — to unblock deployment.
+  
 
